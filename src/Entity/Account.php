@@ -7,7 +7,6 @@ use App\Repository\AccountRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
  * @ORM\Entity(repositoryClass=AccountRepository::class)
  */
 class Account

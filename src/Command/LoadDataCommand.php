@@ -81,6 +81,10 @@ class LoadDataCommand extends Command
             $teamIds[] = $to->getId();
         }
 
+        if(count($teamIds) > 1) {
+            array_shift($teamIds);
+        }
+
         $io->writeln('Teams successfully generated');
         $io->writeln('Generate Accounts');
 

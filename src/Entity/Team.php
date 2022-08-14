@@ -7,9 +7,28 @@ use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\ReportingsController;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={
+ *          "report_json" = {
+ *              "route_name" = "app_report_json",
+ *              "openapi_context" = {
+ *                  "summary"="JSON report",
+ *                  "description"="JSON Report"
+ *              }
+ *          },
+ *          "report_xml" = {
+ *              "route_name" = "app_report_xml",
+ *              "openapi_context" = {
+ *                  "summary"="XML Report",
+ *                  "description"="XML Report"
+ *              }
+ *          }
+ *      },
+ *     itemOperations={}
+ * )
  * @ORM\Entity(repositoryClass=TeamRepository::class)
  */
 class Team
