@@ -35,7 +35,7 @@ class ReportingsController extends AbstractController
         $this->serializer = new Serializer($normalizers, $encoders);
     }
     /**
-     * @Route("/report/json", name="app_report_json", methods={"GET"})
+     * @Route("/api/report/json", name="app_report_json", methods={"GET"})
      */
     public function reportJson(ManagerRegistry $doctrine): Response
     {
@@ -55,7 +55,7 @@ class ReportingsController extends AbstractController
     }
 
     /**
-     * @Route("/report/xml", name="app_report_xml", methods={"GET"})
+     * @Route("/api/report/xml", name="app_report_xml", methods={"GET"})
      */
     public function reportXml(ManagerRegistry $doctrine): Response
     {

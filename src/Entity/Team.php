@@ -7,7 +7,6 @@ use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Controller\ReportingsController;
 
 /**
  * @ApiResource(
@@ -93,7 +92,6 @@ class Team
     public function removeAccount(Account $account): self
     {
         if ($this->accounts->removeElement($account)) {
-            // set the owning side to null (unless already changed)
             if ($account->getTeam() === $this) {
                 $account->setTeam(null);
             }
